@@ -1,0 +1,200 @@
+:root {
+    --bg-main: linear-gradient(180deg, rgba(25, 74, 114, 0.993) 0%, #fff 60%);
+    --card-bg: rgb(48, 48, 48);
+    --card-border: rgba(148, 163, 184, 0.2);
+    --text-1: #d8ecfa;
+    --text-dim: #94a3b8;
+    --accent: #38bdf8;
+    --accent-glow: rgba(56, 189, 248, 0.4);
+    --radius-lg: 20px;
+    --radius-sm: 10px;
+    --transition-fast: 0.18s ease;
+    --transition-slow: 0.35s ease;
+    --shadow-card: 0 30px 60px rgba(0,0,0,.7);
+    --shadow-hover: 0 40px 80px rgba(0,0,0,.9);
+    --glass-bg: rgba(25, 74, 114, 0.993);
+    --glass-border: rgba(255, 255, 255, 0);
+    --glass-backdrop: blur(12px);
+    --font-stack: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+body {
+    background: var(--bg-main);
+    background-attachment: fixed;
+    min-height: 100vh;
+    font-family: var(--font-stack);
+    color: var(--text-light);
+    display: flex;
+    flex-direction: column;
+    padding-top: 80px;
+}
+
+.header {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 1000;
+    padding: 32px;
+    background: var(--glass-bg);
+    backdrop-filter: var(--glass-backdrop);
+    border-bottom: 1px solid var(--glass-border);
+    box-shadow: 0 20px 50px rgba(0,0,0,.8);
+}
+
+.brand {
+    font-weight: 600;
+    font-size: 2.4rem;
+    line-height: 1.2;
+    color: var(--text-1);
+}
+.title {
+    max-width: 1300px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.pagar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+}
+
+.pagar a {
+    text-decoration: none;
+    color: var(--text-1);
+    background: rgba(102, 255, 72, 0.1);
+    border: 1px solid rgba(148,163,184,.3);
+    padding: 8px 12px;
+    font-size: 1rem;
+    line-height: 1;
+    border-radius: var(--radius-sm);
+    font-weight: 600;
+    transition: all var(--transition-fast);
+}
+
+.pagar a:hover {
+    background: var(--accent);
+    color: #0f172a;
+    border-color: var(--accent);
+    box-shadow: 0 20px 30px var(--accent-glow);
+}
+
+.carrinho {
+    font-weight: 600;
+    font-size: 1.5rem;
+    line-height: 1;
+    color: white;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 16px;
+    justify-content: center;
+    position: flex;
+    margin-left: 26%;
+}
+
+.main-wrapper {
+    max-width: 1300px;
+    width: 100%;
+    margin: 24px auto 80px;
+    padding: 0 16px 64px;
+}
+
+.pedido {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-card);
+    margin-top: 45px;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    position: relative;
+    overflow: hidden;
+    transition: all var(--transition-slow);
+}
+
+.coca,
+.pepsi {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: white;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    align-items: baseline;
+}
+
+.imagem img {
+    width: 100%;
+    height: auto;
+}
+
+.preco {
+    color: #02851c;
+}
+.fundo {
+    background: var(--glass-bg);
+    border: 1px solid var(--card-border);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-card);
+    margin-top: 45px;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    position: relative;
+    overflow: hidden;
+    align-items: end;
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.valor{
+      display: flex;
+    justify-content: center;
+    flex-direction: column-reverse;
+    overflow: hidden;
+    align-items: end;
+    position: absolute;
+    margin-bottom: 15%;
+    bottom: 18px;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: white;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    align-items: baseline;
+}
+@media (max-width: 768px) {
+    .header {
+        padding: 16px;
+    }
+    .title {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+/*é o molodoy ou não é???*/
